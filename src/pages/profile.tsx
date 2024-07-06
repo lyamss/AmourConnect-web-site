@@ -1,4 +1,4 @@
-﻿import Profile from "@/interfaceAdapters/Dashboard/Profile/Profile";
+﻿import Profile from "@/Dashboard/Profile/Profile";
 
 const ProfileUser = () =>
 {

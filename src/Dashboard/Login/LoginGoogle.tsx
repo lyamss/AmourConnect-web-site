@@ -2,11 +2,11 @@ import 'tailwindcss/tailwind.css';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation'
 import { AuthStatus } from "@/entities/AuthStatus";
-import { UseAuth } from "@/interfaceAdapters/Hook/UseAuth";
-import Loader1 from "@/app/components/Loading/Loader1";
+import { UseAuth } from "@/HookApi/UseAuth";
+import Loader1 from "@/components/Loading/Loader1";
 import Image from 'next/image';
 import Head from 'next/head';
-import { Button_1Loading } from '@/app/components/Button/Button_1';
+import { Button_1Loading } from '@/components/Button/Button_1';
 
 
 const LoginGoogle = () => {

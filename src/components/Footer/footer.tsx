@@ -30,7 +30,7 @@ const Footer = () => {
             />
           <div className="order-1 md:order-2">
             <a
-              href="https://www.github.com/lyamss/AmourConnect"
+              href="https://github.com/AmourConnect"
               className="transition duration-300 hover:text-gray-300"
             >
               Code source du projet

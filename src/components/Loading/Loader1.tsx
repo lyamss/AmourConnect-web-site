@@ -3,15 +3,15 @@
 import Image from 'next/image';
 import 'tailwindcss/tailwind.css';
 
-const Loader2 = () => {
+const Loader1 = () => {
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-[#fffbf7]">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-white">
             <div className="max-w-xs mx-auto">
                 <Image
-                    src="/assets/gif/loading_heart2.gif"
+                    src="/assets/gif/loading_heart3.gif"
                     alt="Loading"
-                    width={200}
-                    height={200}
+                    width={600}
+                    height={600}
                     className="img-fluid"
                     priority={true}
                     quality={100}
@@ -22,4 +22,4 @@ const Loader2 = () => {
     );
 }
 
-export default Loader2
+export default Loader1

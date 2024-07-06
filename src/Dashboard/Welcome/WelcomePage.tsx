@@ -1,11 +1,11 @@
 import { GetUserDto } from "@/entities/GetUserDto";
 import { AuthStatus } from "@/entities/AuthStatus";
-import Loader1 from "@/app/components/Loading/Loader1";
-import PopUp from "@/app/components/PopUp/pop_up1";
-import PopUp2 from "@/app/components/PopUp/pop_up2";
-import { UseAuth } from "@/interfaceAdapters/Hook/UseAuth";
-import { UseRequestFriends } from "@/interfaceAdapters/Hook/UseRequestFriends";
-import { UseUser } from "@/interfaceAdapters/Hook/UseUser";
+import Loader1 from "@/components/Loading/Loader1";
+import PopUp from "@/components/PopUp/pop_up1";
+import PopUp2 from "@/components/PopUp/pop_up2";
+import { UseAuth } from "@/HookApi/UseAuth";
+import { UseRequestFriends } from "@/HookApi/UseRequestFriends";
+import { UseUser } from "@/HookApi/UseUser";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react';
@@ -13,7 +13,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { servicesTools } from "@/services/Tools";
 import { motion } from 'framer-motion';
-import { Button_1Loading } from '@/app/components/Button/Button_1';
+import { Button_1Loading } from '@/components/Button/Button_1';
 import Link from "next/link";
 
 

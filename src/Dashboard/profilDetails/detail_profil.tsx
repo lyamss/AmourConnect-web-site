@@ -1,18 +1,18 @@
 import { AuthStatus } from "@/entities/AuthStatus";
-import Loader1 from "@/app/components/Loading/Loader1";
-import { UseAuth } from "@/interfaceAdapters/Hook/UseAuth";
-import { UseUser } from "@/interfaceAdapters/Hook/UseUser";
-import { UseRequestFriends } from "@/interfaceAdapters/Hook/UseRequestFriends";
+import Loader1 from "@/components/Loading/Loader1";
+import { UseAuth } from "@/HookApi/UseAuth";
+import { UseUser } from "@/HookApi/UseUser";
+import { UseRequestFriends } from "@/HookApi/UseRequestFriends";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import { servicesTools } from "@/services/Tools";
-import PopUp from "@/app/components/PopUp/pop_up1";
-import PopUp2 from "@/app/components/PopUp/pop_up2";
-import { Button_1Loading } from '@/app/components/Button/Button_1';
-import { Button_link_welcome } from '@/app/components/Button/Button_link_welcome';
+import PopUp from "@/components/PopUp/pop_up1";
+import PopUp2 from "@/components/PopUp/pop_up2";
+import { Button_1Loading } from '@/components/Button/Button_1';
+import { Button_link_welcome } from '@/components/Button/Button_link_welcome';
 
 const ProfileDetailID = () => {
 

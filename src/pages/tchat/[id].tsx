@@ -1,4 +1,4 @@
-import Tchat from '@/interfaceAdapters/Dashboard/tchatID/Tchat';
+import Tchat from '@/Dashboard/tchatID/Tchat';
 
 const Tchatid = () =>
 {

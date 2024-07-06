@@ -1,4 +1,4 @@
-import ProfileDetailID from '@/interfaceAdapters/Dashboard/profilDetails/detail_profil'
+import ProfileDetailID from '@/Dashboard/profilDetails/detail_profil'
 
 const idProfil = () =>
 {

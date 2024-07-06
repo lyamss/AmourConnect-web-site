@@ -2,14 +2,14 @@ import 'tailwindcss/tailwind.css';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { AuthStatus } from "@/entities/AuthStatus";
-import { UseAuth } from "@/interfaceAdapters/Hook/UseAuth";
-import { UseUser } from "@/interfaceAdapters/Hook/UseUser";
-import Loader1 from "@/app/components/Loading/Loader1";
+import { UseAuth } from "@/HookApi/UseAuth";
+import { UseUser } from "@/HookApi/UseUser";
+import Loader1 from "@/components/Loading/Loader1";
 import Head from 'next/head';
 import Image from 'next/image';
 import { servicesTools } from "@/services/Tools";
-import { Button_1Loading } from '@/app/components/Button/Button_1';
-import { Button_link_welcome } from '@/app/components/Button/Button_link_welcome';
+import { Button_1Loading } from '@/components/Button/Button_1';
+import { Button_link_welcome } from '@/components/Button/Button_link_welcome';
 
 
 

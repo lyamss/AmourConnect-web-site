@@ -1,4 +1,4 @@
-import RequestMatch from "@/interfaceAdapters/Dashboard/Request/RequestMatch";
+import RequestMatch from "@/Dashboard/Request/RequestMatch";
 
 const Request = () =>
 {

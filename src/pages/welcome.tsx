@@ -1,4 +1,4 @@
-import WelcomePage from "@/interfaceAdapters/Dashboard/Welcome/WelcomePage";
+import WelcomePage from "@/Dashboard/Welcome/WelcomePage";
 
 const welcome = () =>
 {

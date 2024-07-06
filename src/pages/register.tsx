@@ -1,4 +1,4 @@
-﻿import Register from '@/interfaceAdapters/Dashboard/Register/Register';
+﻿import Register from '@/Dashboard/Register/Register';
 
 const RegisterUser = () =>
 {
