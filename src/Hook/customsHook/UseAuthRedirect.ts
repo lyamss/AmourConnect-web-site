@@ -4,7 +4,7 @@ import { AuthStatus } from "@/entities/AuthStatus";
 import { useRouter } from 'next/navigation'
 
 
-export const UseAuthRedirect = () =>
+export const UseAuthRedirect = (isProtected: boolean) =>
 {
     const { status, UserGetConnected } = UseAuth();
     const router = useRouter();
@@ -15,14 +15,17 @@ export const UseAuthRedirect = () =>
 
     useEffect(() => {
         let timer: NodeJS.Timeout | undefined;
-        if (status === AuthStatus.Unauthenticated) 
-        {
-            timer = setTimeout(() => {
-                router.push('/login');
-            }, 3000);
+        if (isProtected && status === AuthStatus.Unauthenticated) {
+          timer = setTimeout(() => {
+            router.push("/login");
+          }, 3000);
+        } else if (!isProtected && status === AuthStatus.Authenticated) {
+          timer = setTimeout(() => {
+            router.push("/welcome");
+          }, 3000);
         }
         return () => clearTimeout(timer);
-    }, [status, router]);
+      }, [status, isProtected, router]);
 
     return status;
 }
