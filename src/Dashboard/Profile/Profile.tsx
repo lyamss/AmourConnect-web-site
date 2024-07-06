@@ -2,10 +2,10 @@ import 'tailwindcss/tailwind.css';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { AuthStatus } from "@/entities/AuthStatus";
-import { UseAuth } from "@/HookApi/UseAuth";
-import { UseUser } from "@/HookApi/UseUser";
+import { UseAuth } from "@/Hook/HookApi/UseAuth";
+import { UseUser } from "@/Hook/HookApi/UseUser";
 import Loader1 from "@/components/Loading/Loader1";
-import Head from 'next/head';
+import Header1 from "@/components/Header/Header1";
 import Image from 'next/image';
 import { servicesTools } from "@/services/Tools";
 import { Button_1Loading } from '@/components/Button/Button_1';
@@ -82,10 +82,7 @@ const Profile = () => {
 
         return (
             <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Head>
-                    <title>AmourConnect</title>
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                <Header1/>
                 {UserAuthDto ? (
                     <>
                         <h1 className="text-3xl font-bold mb-8 text-center sm:text-4xl text-pink-500">Mets en valeur tes atouts pour séduire sur notre site ❤</h1>

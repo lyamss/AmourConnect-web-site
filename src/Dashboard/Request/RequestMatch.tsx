@@ -1,12 +1,12 @@
 import { GetRequestFriendsDto } from "@/entities/GetRequestFriendsDto";
 import { AuthStatus } from "@/entities/AuthStatus";
 import Loader1 from "@/components/Loading/Loader1";
-import { UseRequestFriends } from "@/HookApi/UseRequestFriends";
-import { UseAuth } from "@/HookApi/UseAuth";
+import { UseRequestFriends } from "@/Hook/HookApi/UseRequestFriends";
+import { UseAuth } from "@/Hook/HookApi/UseAuth";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
+import Header1 from "@/components/Header/Header1";
 import Image from 'next/image';
 import { Button_link_welcome } from '@/components/Button/Button_link_welcome';
 import { Button_1Loading } from '@/components/Button/Button_1';
@@ -83,10 +83,7 @@ const RequestMatch = () => {
     if (status === AuthStatus.Authenticated) {
         return (
             <div className="min-h-screen bg-pink-200 flex flex-col items-center justify-center sm:p-6">
-                <Head>
-                    <title>AmourConnect</title>
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                <Header1/>
 
                 <div className="w-full max-w-4xl mx-auto shadow-lg rounded-lg overflow-hidden md:flex md:flex-row">
     <div className="w-full md:w-1/3 p-4">

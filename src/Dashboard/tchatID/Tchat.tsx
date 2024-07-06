@@ -1,13 +1,13 @@
 import { GetMessageDto } from "@/entities/GetMessageDto";
 import { AuthStatus } from "@/entities/AuthStatus";
 import Loader1 from "@/components/Loading/Loader1";
-import { UseMessage } from "@/HookApi/UseMessage";
-import { UseUser } from "@/HookApi/UseUser";
-import { UseAuth } from "@/HookApi/UseAuth";
+import { UseMessage } from "@/Hook/HookApi/UseMessage";
+import { UseUser } from "@/Hook/HookApi/UseUser";
+import { UseAuth } from "@/Hook/HookApi/UseAuth";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
+import Header1 from "@/components/Header/Header1";
 import { servicesTools } from '@/services/Tools';
 import { Button_1Loading } from '@/components/Button/Button_1';
 import { LoaderCustombg } from '@/components/ui/LoaderCustombg';
@@ -75,10 +75,7 @@ const Tchat = () => {
     if (status === AuthStatus.Authenticated) {
         return (
             <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Head>
-                    <title>AmourConnect</title>
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                <Header1/>
                 <div className="w-full max-w-xl mx-auto">
                     <div className="h-[60vh] overflow-y-auto px-4"> {/* Chat container with scrollable feature */}
                     <Link href={`/profil-details/${userIDDto?.id_User}`}>

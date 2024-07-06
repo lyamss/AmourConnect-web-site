@@ -2,10 +2,10 @@ import 'tailwindcss/tailwind.css';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
 import { AuthStatus } from "@/entities/AuthStatus";
-import { UseAuth } from "@/HookApi/UseAuth";
+import { UseAuth } from "@/Hook/HookApi/UseAuth";
 import Loader1 from "@/components/Loading/Loader1";
 import Image from 'next/image';
-import Head from 'next/head';
+import Header1 from "@/components/Header/Header1";
 import { servicesTools } from "@/services/Tools";
 import { Button_1Loading } from '@/components/Button/Button_1';
 import {SetUserDto} from '@/entities/SetUserDto';
@@ -63,10 +63,7 @@ const Register = () => {
 
         return (
             <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Head>
-                    <title>AmourConnect</title>
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                <Header1/>
                     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                         <div className="mx-auto max-w-lg">
                             <h1 className="text-center text-2xl font-bold text-pink-500 sm:text-3xl">Valider votre Inscription pour lover ❤️</h1>
