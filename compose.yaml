@@ -26,7 +26,7 @@ services:
       - "traefik.http.routers.frontamourconnect-2.tls=true"
       - "traefik.http.routers.frontamourconnect-2.tls.certresolver=prodresolver"
       - "traefik.http.routers.frontamourconnect-2.entrypoints=websecure"
-      - "traefik.http.routers.frontamourconnect-2.service=frontamourconnect"
+      - "traefik.http.routers.frontamourconnect-2.middlewares=frontamourconnect-www-to-nonwww@docker"
       # loadbalancer
       - "traefik.http.services.frontamourconnect.loadbalancer.server.port=${NEXT_PUBLIC_PORT}"
       # middleware crowdsec
@@ -34,5 +34,5 @@ services:
       - "traefik.http.middlewares.crowdsec-frontamourconnect.plugin.crowdsec-bouncer.enabled=true"
       - "traefik.http.middlewares.crowdsec-frontamourconnect.plugin.crowdsec-bouncer.crowdseclapikey=${CrowdSec_BOUNCER_API_KEY}"
       # middleware redirect
-      - "traefik.http.middlewares.test-redirectregex.redirectregex.regex=^https://www.tubevideo.shop/(.*)"
-      - "traefik.http.middlewares.test-redirectregex.redirectregex.replacement=https://tubevideo.shop/$${1}"
+      - "traefik.http.middlewares.frontamourconnect-www-to-nonwww.redirectregex.regex=^https://www.tubevideo.shop/(.*)"
+      - "traefik.http.middlewares.frontamourconnect-www-to-nonwww.redirectregex.replacement=https://tubevideo.shop/$${1}"
