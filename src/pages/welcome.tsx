@@ -1,9 +1,9 @@
 import 'tailwindcss/tailwind.css';
 import Header1 from "@/components/Header/Header1";
-import CardMatch from "@/Dashboard/Welcome/CardMatch";
-import {useFetchRequestFriends} from '@/Hook/customsHook/useFetchRequestFriends';
-import { HeaderLink } from "@/Dashboard/Welcome/HeaderLink"; 
-import { useUsersToMatch } from "@/Hook/customsHook/useUsersToMatch";
+import CardMatch from "@/components/Dashboard/Welcome/CardMatch";
+import {useFetchRequestFriends} from '@/Hook/customsHook/RequestMatch/useFetchRequestFriends';
+import { HeaderLink } from "@/components/Dashboard/Welcome/HeaderLink"; 
+import { useUsersToMatch } from "@/Hook/customsHook/User/useUsersToMatch";
 import AuthRedirect from '@/services/AuthRedirect';
 import Loader1 from "@/components/Loading/Loader1";
 const WelcomePage = () => 

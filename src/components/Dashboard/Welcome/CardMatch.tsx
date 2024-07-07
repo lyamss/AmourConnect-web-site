@@ -3,9 +3,9 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import { servicesTools } from "@/services/Tools";
 import { GetUserDto } from "@/entities/GetUserDto";
-import RequestMPopUpApi from "@/Dashboard/Request/RequestMPopUpApi";
+import RequestMPopUpApi from "@/components/Dashboard/Request/RequestMPopUpApi";
 import {GetRequestFriendsDto } from "@/entities/GetRequestFriendsDto";
-import RMButton from '@/Dashboard/Request/RMButton';
+import RMButton from '@/components/Dashboard/Request/RMButton';
 const CardMatch = ( props: { 
     show: boolean, 
     requestFriendsDto: GetRequestFriendsDto | null,

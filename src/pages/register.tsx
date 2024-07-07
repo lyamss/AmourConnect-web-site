@@ -1,4 +1,4 @@
-﻿import Register from '@/Dashboard/Register/Register';
+﻿import Register from '@/components/Dashboard/Register/Register';
 
 const RegisterUser = () =>
 {

@@ -2,7 +2,7 @@ import { GetUserDto } from "@/entities/GetUserDto";
 import Image from 'next/image';
 import { servicesTools } from "@/services/Tools";
 import { Button_link_welcome } from '@/components/Button/Button_link_welcome';
-import RMButton from '@/Dashboard/Request/RMButton';
+import RMButton from '@/components/Dashboard/Request/RMButton';
 
 
 export const CardProfil = ( props: {

@@ -1,11 +1,11 @@
 import Loader1 from "@/components/Loading/Loader1";
-import { UseGetUserID } from "@/Hook/customsHook/UseGetUserID";
+import { UseGetUserID } from "@/Hook/customsHook/User/UseGetUserID";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/router';
 import Header1 from "@/components/Header/Header1";
-import RequestMPopUpApi from "@/Dashboard/Request/RequestMPopUpApi";
-import {useFetchRequestFriends} from '@/Hook/customsHook/useFetchRequestFriends';
-import { CardProfil } from "@/Dashboard/profilDetails/CardProfil";
+import RequestMPopUpApi from "@/components/Dashboard/Request/RequestMPopUpApi";
+import {useFetchRequestFriends} from '@/Hook/customsHook/RequestMatch/useFetchRequestFriends';
+import { CardProfil } from "@/components/Dashboard/profilDetails/CardProfil";
 import AuthRedirect from '@/services/AuthRedirect';
 const ProfileDetailID = () => {
 
