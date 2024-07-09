@@ -20,7 +20,10 @@ const Profile = () => {
             >
             <div className="bg-pink-200 min-h-screen">
                 <Head1/>
-                <Header2/>
+                <Header2
+                link_href='/welcome'
+                message='Welcome 🥰'
+                />
                 <CardProfile
                 handleSubmit={handleSubmit}
                 handleSubmitDate={handleSubmitDate}

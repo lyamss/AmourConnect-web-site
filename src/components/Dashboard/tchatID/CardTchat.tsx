@@ -17,7 +17,7 @@ export const CardTchat = ( props: {
     handleSendMessage: () => void;
 }, ) =>{
     return (
-        <div className="w-full max-w-xl mx-auto">
+        <div className="w-full max-w-xl mx-auto p-14">
         <div className="h-[60vh] overflow-y-auto px-4"> {/* Chat container with scrollable feature */}
         <Link href={`/profil-details/${props.userIDDto?.id_User}`}>
         <div className="mb-4 sm:mb-0">
