@@ -27,6 +27,7 @@ const CardMatch = ( props: {
                 {Array.isArray(props.usersDto) && props.usersDto.length > 0 ? (
                         props.usersDto.map((account: GetUserDto) => (
                                     <motion.div
+                                        key={account.id_User}
                                         initial={{ opacity: 0, y: 50 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.7 }}
