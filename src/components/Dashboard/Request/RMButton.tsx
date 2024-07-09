@@ -9,7 +9,7 @@ const RMButton = ( props: {
         <Button_1Loading
         onClick={() => props.button_requestfriendsAdd(props.id_User)}
         title="Demander un match 🥰"
-        className="px-4 py-2 text-sm font-medium text-white bg-pink-600 rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 md:text-base md:px-6 md:py-3"
+        className="bg-pink-500 rounded text-white hover:bg-pink-700"
         />
     );
 }

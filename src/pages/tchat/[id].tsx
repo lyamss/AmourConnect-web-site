@@ -1,7 +1,7 @@
 import Loader1 from "@/components/Loading/Loader1";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/router';
-import Header1 from "@/components/Header/Header1";
+import Head1 from "@/components/Header/Head1";
 import AuthRedirect from '@/services/AuthRedirect';
 import { CardTchat } from "@/components/Dashboard/tchatID/CardTchat";
 import { UseGetUserID } from "@/Hook/customsHook/User/UseGetUserID";
@@ -20,7 +20,7 @@ const Tchat = () => {
             isProtected={true}
             >
             <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Header1/>
+                <Head1/>
 
                 <CardTchat
                 userIDDto={userIDDto}

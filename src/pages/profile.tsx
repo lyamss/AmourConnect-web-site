@@ -1,6 +1,6 @@
 ﻿import 'tailwindcss/tailwind.css';
 import Loader1 from "@/components/Loading/Loader1";
-import Header1 from "@/components/Header/Header1";
+import Head1 from "@/components/Header/Head1";
 import AuthRedirect from '@/services/AuthRedirect';
 import { CardProfile } from '@/components/Dashboard/Profile/CardProfile';
 import { UseProfilEdit } from '@/Hook/customsHook/User/UseProfilEdit';
@@ -18,7 +18,7 @@ const Profile = () => {
             isProtected={true}
             >
             <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Header1/>
+                <Head1/>
 
                 <CardProfile
                 handleSubmit={handleSubmit}
