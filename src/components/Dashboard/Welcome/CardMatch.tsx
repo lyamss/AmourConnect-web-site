@@ -16,7 +16,7 @@ const CardMatch = ( props: {
 {
     return (
         <>
-<div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+<div className="flex flex-col items-center justify-center">
                 <RequestMPopUpApi
                 show={props.show}
                 requestFriendsDto={props.requestFriendsDto}
@@ -78,8 +78,8 @@ const CardMatch = ( props: {
                                     </motion.div>
                     ))
                     ) : (
-                    <div className="text-sm text-gray-500 dark:text-gray-400 md:text-base">
-                        Aucun utilisateur à afficher à cause de vos critères (ville, âge, sexe...) mettez à jour votre profil
+                    <div className="text-sm text-white ">
+                        <strong>Aucun utilisateur à afficher à cause de vos critères (ville, âge, sexe...) mettez à jour votre profil</strong>
                     </div>
                 )}
                 </div>

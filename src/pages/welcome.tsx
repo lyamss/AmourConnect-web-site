@@ -19,7 +19,7 @@ const WelcomePage = () =>
     LoadingComponent={<Loader1 />}
     isProtected={true}
     >
-                <div className='bg-pink-400 '>
+                <div className='bg-pink-400 min-h-screen'>
                 <Head1/>
                 <Header1/>
                 <CardMatch

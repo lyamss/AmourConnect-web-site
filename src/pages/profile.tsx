@@ -4,6 +4,7 @@ import Head1 from "@/components/Header/Head1";
 import AuthRedirect from '@/services/AuthRedirect';
 import { CardProfile } from '@/components/Dashboard/Profile/CardProfile';
 import { UseProfilEdit } from '@/Hook/customsHook/User/UseProfilEdit';
+import { Header2 } from '@/components/Header/Header2';
 
 const Profile = () => {
 
@@ -17,9 +18,9 @@ const Profile = () => {
             LoadingComponent={<Loader1 />}
             isProtected={true}
             >
-            <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
+            <div className="bg-pink-200 min-h-screen">
                 <Head1/>
-
+                <Header2/>
                 <CardProfile
                 handleSubmit={handleSubmit}
                 handleSubmitDate={handleSubmitDate}
