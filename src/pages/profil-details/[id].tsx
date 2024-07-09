@@ -28,7 +28,7 @@ const ProfileDetailID = () => {
                 <Head1/>
                 <Header2
                 link_href='/welcome'
-                message='Welcome 💘'
+                message='Welcome 💝'
                 />
                 <RequestMPopUpApi
                 show={show}

@@ -11,8 +11,8 @@ export const CardMatchTrue = (props: {
 {
     return (
         <div className="w-full md:w-1/3 p-4">
-        <div className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            <h2 className="text-lg font-medium text-gray-900">Liste de matchs valides</h2>
+            <div className="flex items-center justify-between px-4 py-2 font-medium text-gray-900">
+            <h2 className="text-lg font-medium text-gray-900"><strong>Matchs💞</strong></h2>
         </div>
 
         <table className="w-full text-left divide-y divide-gray-200">

@@ -23,7 +23,7 @@ const RequestMatch = () => {
                 link_href='/welcome'
                 message='Welcome 💖'
                 />
-                                <div className="w-full max-w-4xl mx-auto shadow-lg rounded-lg overflow-hidden md:flex md:flex-row">
+                <div className="w-full max-w-4xl mx-auto shadow-lg rounded-lg overflow-hidden md:flex md:flex-row">
                 <CardMatchSend
                 sentRequests={sentRequests}
                 >
