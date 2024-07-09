@@ -10,9 +10,9 @@ export const CardMatchReceived = (props: {
 {
     return (
         <div className="w-full md:w-1/3 p-4">
-        <div className="twhitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            <h2 className="text-lg font-medium text-gray-900">Match reçues</h2>
-        </div>
+            <div className="flex items-center justify-between px-4 py-2 font-medium text-gray-900">
+                <h2 className="text-lg font-medium text-gray-900"><strong>Matchs reçus💘</strong></h2>
+            </div>
 
         <table className="w-full text-left divide-y divide-gray-200">
             <tbody className="divide-y divide-gray-200">
@@ -35,18 +35,18 @@ export const CardMatchReceived = (props: {
                                                 <Image src={`data:image/jpeg;base64,${item.userIssuerPictureProfile}`} width="50" height="50" alt={item.userIssuerPseudo} className="rounded-full border-4 border-pink-500" />
                                             )}
                                         </div>
-                                        <div className="text-sm text-gray-500">Date demande {new Date(item.date_of_request).toLocaleString()}</div>
+                                        <div className="text-xs text-gray-500">{new Date(item.date_of_request).toLocaleString()}</div>
                                     </Link>
                                 </div>
                             </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-right">
-                           <Button_1Loading
+                        <Button_1Loading
                             onClick={() => props.AcceptRequestFriends(item.idUserIssuer)}
                             title="Accepter"
-                            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            />
-                        </td>
+                            className="px-4 py-2 text-sm font-medium text-white bg-fuchsia-600 rounded-lg hover:bg-fuchsia-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+                        />
+                    </td>
                     </tr>
                 ))
                 ) :

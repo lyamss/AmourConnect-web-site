@@ -1,11 +1,12 @@
 import Loader1 from "@/components/Loading/Loader1";
 import 'tailwindcss/tailwind.css';
 import { useRouter } from 'next/router';
-import Header1 from "@/components/Header/Header1";
+import Head1 from "@/components/Header/Head1";
 import AuthRedirect from '@/services/AuthRedirect';
 import { CardTchat } from "@/components/Dashboard/tchatID/CardTchat";
 import { UseGetUserID } from "@/Hook/customsHook/User/UseGetUserID";
 import { UseFetchTchat } from "@/Hook/customsHook/Tchat/UseFetchTchat";
+import { Header2 } from '@/components/Header/Header2';
 const Tchat = () => {
 
     const router = useRouter();
@@ -19,9 +20,12 @@ const Tchat = () => {
             LoadingComponent={<Loader1 />}
             isProtected={true}
             >
-            <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
-                <Header1/>
-
+            <div className="bg-pink-200 min-h-screen">
+                <Head1/>
+                <Header2
+                link_href="/request"
+                message="Mes matchs❤️"
+                />
                 <CardTchat
                 userIDDto={userIDDto}
                 messageDto={messageDto}
@@ -33,13 +37,6 @@ const Tchat = () => {
                 handleSendMessage={handleSendMessage}
                 >
                 </CardTchat>
-
-                <a
-                    href={`/request`}
-                    className="text-white bg-pink-400 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-                >
-                    Voir mes matchs
-                </a>
             </div>
             </AuthRedirect>
         );

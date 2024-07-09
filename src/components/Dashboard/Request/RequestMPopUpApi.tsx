@@ -10,11 +10,11 @@ const RequestMPopUpApi = ( props: {
 {
     return (
         <>
-        {props.show && (props.requestFriendsDto?.message) && (
+        {props.show && (props.requestFriendsDto?.message) ? (
             <PopUp title="Message" description={props.requestFriendsDto?.message} />
-        )} : { props.show &&(props.MessageApiR) && (
+        ) : props.show &&(props.MessageApiR) ? (
             <PopUp2 title="Attention" description={props.MessageApiR} />
-        )}
+        ) : null }
         </>
     );
 }
