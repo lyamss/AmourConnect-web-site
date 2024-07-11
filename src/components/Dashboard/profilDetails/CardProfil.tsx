@@ -32,6 +32,7 @@ export const CardProfil = ( props: {
                                 </div>
                                 <p className="text-fuchsia-700">ID user : <span className="font-bold">{props.userIDDto.id_User}</span></p>
                                 <p className="text-fuchsia-700">Description : <span className="font-bold">{props.userIDDto.description}</span></p>
+                                <p className="text-fuchsia-700">Ville : <span className="font-bold">{props.userIDDto.city}</span></p>
                                 <p className="text-fuchsia-700">Date de naissance : {new Date(props.userIDDto.date_of_birth).toLocaleDateString()}</p>
                                 <div className="text-fuchsia-700">Age : {servicesTools.Tools.ConvertingADateToAge(props.userIDDto.date_of_birth)} ans</div>
                             </div>

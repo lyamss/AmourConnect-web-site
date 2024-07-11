@@ -80,7 +80,7 @@ const CardMatch = ( props: {
                     ))
                     ) : (
                     <div className="text-sm text-white ">
-                        <strong>Aucun utilisateur à afficher à cause de vos critères (ville, âge, sexe...) mettez à jour votre profil</strong>
+                        <strong>Aucun utilisateur à afficher à cause de vos critères (âge, sex) mettez à jour votre profil</strong>
                     </div>
                 )}
                 </div>
