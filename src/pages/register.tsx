@@ -14,7 +14,7 @@ const Register = () => {
             LoadingComponent={<Loader1 />}
             isProtected={false}
             >
-            <div className="bg-pink-200 flex flex-col items-center justify-center h-screen sm:p-6">
+            <div className="bg-pink-200 min-h-screen flex flex-col items-center justify-center">
                 <Head1/>
                     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                         <div className="mx-auto max-w-lg">
