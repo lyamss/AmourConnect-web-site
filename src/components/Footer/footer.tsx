@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
           <p className="order-2 mt-8 md:order-1 md:mt-0">
             {" "}
-            &copy; 2024 AmourConnect. All rights reserved with Nadjiba
+            &copy; 2024 AmourConnect. All rights reserved
           </p>
           <Image
             alt="Github logo"
