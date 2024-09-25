@@ -19,7 +19,6 @@ const WelcomePage = () =>
     LoadingComponent={<Loader1 />}
     isProtected={true}
     >
-                <div className='bg-pink-400 min-h-screen'>
                 <Head1/>
                 <Header1/>
                 <CardMatch
@@ -29,7 +28,6 @@ const WelcomePage = () =>
                     usersDto={usersDto}
                     button_requestfriendsAdd={button_requestfriendsAdd}
                     />
-                 </div>
     </AuthRedirect>
     );
 }
