@@ -5,11 +5,11 @@ import { apiClient } from "@/services/apiClient";
 
 export const UseUser = () =>
 {
-    const [usersDto, setUsersDto] = useState<GetUserDto | null>(null);
+    const [usersDto, setUsersDto] = useState<GetUserDto[] | null>(null);
     const [userIDDto, setUserIDDto] = useState<GetUserDto | null>(null);
 
     const UserGetUsersToMach = useCallback(() => {
-        apiClient.FetchData<GetUserDto>("/User/GetUsersToMach")
+        apiClient.FetchData<GetUserDto[]>("/User/GetUsersToMach")
             .then(response => setUsersDto(response))
             .catch(() => setUsersDto(null))
     }, []);
