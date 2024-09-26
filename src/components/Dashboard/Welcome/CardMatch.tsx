@@ -49,22 +49,23 @@ const CardMatch = ( props: {
         
     return (
         <>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200 p-4">
 
+        <div className="z-10">
+        <RequestMPopUpApi
+                        show={props.show}
+                        requestFriendsDto={props.requestFriendsDto}
+                        MessageApiR={props.MessageApiR}
+        />
+        </div>
 
-
-<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200 p-4">
-<RequestMPopUpApi
-                show={props.show}
-                requestFriendsDto={props.requestFriendsDto}
-                MessageApiR={props.MessageApiR}
-                />
-    <h1 className="text-3xl font-bold mb-8 text-pink-700">Find Your Perfect Match ❤️</h1>
+      <h1 className="text-3xl font-bold mb-4 text-pink-700">Find Your Perfect Match ❤️</h1>
       <AnimatePresence>
         {currentUser && (
           <motion.div
             key={currentUser.id_User}
-            initial={{ opacity: 0, x: 0 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ 
               opacity: 0, 
               x: direction === "left" ? -300 : direction === "right" ? 300 : 0,
@@ -74,14 +75,13 @@ const CardMatch = ( props: {
           >
             <Card className="overflow-hidden border-4 border-pink-300 shadow-lg">
               <CardContent className="p-0">
-              <div className="relative">
+                <div className="relative">
               <Link href={`/profil-details/${currentUser.id_User}`}>
-
                 {currentUser.sex === "F" && !currentUser.profile_picture && (
                     <Image
                         src="/assets/images/femme_anonyme.png"
-                        width="100"
-                        height="100"
+                        width="300"
+                        height="700"
                         alt={currentUser.pseudo}
                         className="w-full h-80 object-cover"
                     />
@@ -89,8 +89,8 @@ const CardMatch = ( props: {
                 {currentUser.sex === "M" && !currentUser.profile_picture && (
                     <Image
                         src="/assets/images/homme_bg.png"
-                        width="100"
-                        height="100"
+                        width="300"
+                        height="700"
                         alt={currentUser.pseudo}
                         className="w-full h-80 object-cover"
                     />
@@ -98,23 +98,21 @@ const CardMatch = ( props: {
                 {currentUser.profile_picture && (
                     <Image
                         src={`data:image/jpeg;base64,${currentUser.profile_picture}`}
-                        width="100"
-                        height="100"
+                        width="300"
+                        height="700"
                         alt={currentUser.pseudo}
                         className="w-full h-80 object-cover"
                     />
                 )}
-
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-pink-500 to-transparent p-4">
                     <h2 className="text-2xl font-semibold text-white">
                         {currentUser.sex === "F" ? "Mme " : "Mr "}
                         {currentUser.pseudo}, {servicesTools.Tools.ConvertingADateToAge(currentUser.date_of_birth)}
-                    </h2>
+                 </h2>
                 </div>
 
                 </Link>
                 </div>
-
                 <Link href={`/profil-details/${currentUser.id_User}`}>
                             <div className="p-4 bg-white">
                                 <p className="text-gray-600 mt-2">{currentUser.description}</p>
@@ -139,14 +137,14 @@ const CardMatch = ( props: {
           size="icon"
           className="w-16 h-16 rounded-full bg-white text-pink-500 border-2 border-pink-500 hover:bg-pink-100 hover:text-pink-600 transition-colors duration-300"
           onClick={() => {
-            handleSwipe("right")
-            props.button_requestfriendsAdd(currentUser.id_User)
+              handleSwipe("right")
+              props.button_requestfriendsAdd(currentUser.id_User)
           }}
         >
           <Heart className="h-8 w-8" />
         </Button>
       </div>
-      </div>
+    </div>
 </>
 );
 }
