@@ -54,7 +54,7 @@ export const SpotlightPreview = () => {
 export const TextGenerate = () => {
   return (
     <div className="w-[80%] text-center">
-      <TextGenerateEffect words={words} />
+      <TextGenerateEffect as="h2" className="text-white text-md leading-snug tracking-wide md:text-xl dark:text-white font-bold mt-4" words={words} />
     </div>
   );
 }
