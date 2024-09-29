@@ -1,4 +1,4 @@
-# Projet AmourConnect - FrontEND - React and Typescript
+# Projet AmourConnect - FrontEND - React (NextJS) and Typescript
 
 ![Welcome Page](./public/assets/images/welcome_page.png)
 
