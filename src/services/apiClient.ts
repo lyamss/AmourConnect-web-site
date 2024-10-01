@@ -1,6 +1,12 @@
 import { servicesTools } from "@/services/Tools";
 import FetchOptions from "@/entities/FetchOptions";
 
+interface ApiResponse<T> {
+    message: string;
+    success: boolean;
+    result: T;
+}
+
 export class apiClient
 {
     public static async FetchData<T>(
@@ -24,7 +30,8 @@ export class apiClient
         });
 
         if (r.ok) {
-            return r.json() as Promise<T>;
+            const response: ApiResponse<T> = await r.json();
+            return response.result;
         }
         const data = await r.json();
         throw new ApiError(r.status, data, data.message || 'Une erreur s\'est produite');
