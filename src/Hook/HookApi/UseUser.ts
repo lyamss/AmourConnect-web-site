@@ -9,14 +9,15 @@ export const UseUser = () =>
     const [userIDDto, setUserIDDto] = useState<GetUserDto | null>(null);
 
     const UserGetUsersToMach = useCallback(() => {
-        apiClient.FetchData<GetUserDto[]>("/User/GetUsersToMach")
-            .then(response => setUsersDto(response))
+        apiClient.FetchData<{result: GetUserDto[]}>("/User/GetUsersToMach")
+            .then(response => setUsersDto(response.result))
             .catch(() => setUsersDto(null))
     }, []);
 
     const UserPatch = useCallback((formData: FormData) => {
         apiClient.FetchData<GetUserDto>("/User/UpdateUser", { formData, method: 'PATCH' })
             .then(response => {
+                window.location.reload();
             })
             .catch(response => {
                 window.location.reload();
@@ -25,8 +26,8 @@ export const UseUser = () =>
 
 
     const UserGetUserID = useCallback((Id_User: number) => {
-        apiClient.FetchData<GetUserDto>("/User/GetUser/" + Id_User)
-            .then(response => setUserIDDto(response))
+        apiClient.FetchData<{result: GetUserDto}>("/User/GetUser/" + Id_User)
+            .then(response => setUserIDDto(response.result))
             .catch(() => setUserIDDto(null))
     }, []);
 

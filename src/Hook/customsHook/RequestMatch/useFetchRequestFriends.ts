@@ -3,17 +3,17 @@ import { useEffect, useState } from 'react';
 
 export const useFetchRequestFriends = () =>
 {
-    const { RequestFriendsAdd, MessageApiR, requestFriendsDto } = UseRequestFriends();
+    const { RequestFriendsAdd, MessageApiR, requestFriendsDto, BoolApiR } = UseRequestFriends();
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        if (show && MessageApiR || requestFriendsDto) {
+        if (show && MessageApiR || BoolApiR || requestFriendsDto) {
             const timer = setTimeout(() => {
                 setShow(false);
             }, 3000);
             return () => clearTimeout(timer);
         }
-    }, [show, MessageApiR, requestFriendsDto]);
+    }, [show, MessageApiR, requestFriendsDto, BoolApiR]);
 
 
     const button_requestfriendsAdd = (id_user: number): void =>
@@ -22,5 +22,5 @@ export const useFetchRequestFriends = () =>
         setShow(true);
     }
 
-    return { button_requestfriendsAdd, show, requestFriendsDto, MessageApiR }
+    return { button_requestfriendsAdd, show, requestFriendsDto, MessageApiR, BoolApiR }
 }

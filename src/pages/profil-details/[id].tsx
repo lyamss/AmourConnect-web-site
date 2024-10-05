@@ -16,7 +16,7 @@ const ProfileDetailID = () => {
     const { id } = router.query;
     const idNumber = Number(id);
     const userIDDto = UseGetUserID(idNumber);
-    const { button_requestfriendsAdd, show, requestFriendsDto, MessageApiR } = useFetchRequestFriends();
+    const { button_requestfriendsAdd, show, requestFriendsDto, BoolApiR, MessageApiR } = useFetchRequestFriends();
 
 
     return (
@@ -34,6 +34,7 @@ const ProfileDetailID = () => {
                 show={show}
                 requestFriendsDto={requestFriendsDto}
                 MessageApiR={MessageApiR}
+                BoolApiR={BoolApiR}
                 />
                 <CardProfil
                 userIDDto={userIDDto}

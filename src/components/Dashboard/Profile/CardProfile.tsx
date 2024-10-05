@@ -3,7 +3,9 @@ import { Button_1Loading } from '@/components/Button/Button_1';
 import { GetUserDto } from '@/entities/GetUserDto';
 import { servicesTools } from "@/services/Tools";
 import { LoaderCustombg } from '@/components/ui/LoaderCustombg';
-
+import { useState } from 'react'
+import { Button } from "@/components/ui/button"
+import { CalendarIcon, Camera } from 'lucide-react'
 
 export const CardProfile = (props: {
     UserAuthDto: GetUserDto | null;
@@ -19,6 +21,94 @@ export const CardProfile = (props: {
     setDescription: (descr: string) => void;
 }) =>
 {
+
+
+
+
+
+
+    const [date, setDate] = useState<Date>()
+
+    return (
+        <div className="min-h-screen bg-pink-50 flex items-center justify-center p-4">
+          <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-pink-500 to-pink-600 text-white p-6 rounded-t-lg">
+              <h1 className="text-2xl font-bold text-center">Your Profile</h1>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-32 h-32 rounded-full bg-pink-200 flex items-center justify-center overflow-hidden border-4 border-pink-500">
+                    <img src="/placeholder.svg?height=128&width=128" alt="Profile picture" className="w-full h-full object-cover" />
+                  </div>
+                  <button className="absolute bottom-0 right-0 rounded-full bg-pink-500 hover:bg-pink-600 p-2 text-white">
+                    <Camera className="h-4 w-4" />
+                    <span className="sr-only">Upload new picture</span>
+                  </button>
+                </div>
+              </div>
+    
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <label htmlFor="dob" className="block text-sm font-medium text-gray-700">Date of Birth</label>
+                  <input
+                    type="date"
+                    id="dob"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  />
+                </div>
+    
+                <div className="space-y-2">
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
+                  <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter your city"
+                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  />
+                </div>
+    
+                <div className="space-y-2">
+                  <label htmlFor="sex" className="block text-sm font-medium text-gray-700">Sex</label>
+                  <select
+                    id="sex"
+                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  >
+                    <option value="">Select your sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+    
+                <div className="space-y-2">
+                  <label htmlFor="description" className="block text-sm font-medium text-gray-700">About Me</label>
+                  <textarea
+                    id="description"
+                    placeholder="Tell us about yourself..."
+                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 min-h-[100px]"
+                  ></textarea>
+                </div>
+    
+                <button
+                  type="submit"
+                  className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+                >
+                  Update Profile
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )
+
+
+
+
+
+
     return (
         <>
                         {props.UserAuthDto ? (

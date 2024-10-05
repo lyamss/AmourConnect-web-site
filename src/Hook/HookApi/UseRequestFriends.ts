@@ -6,33 +6,36 @@ export const UseRequestFriends = () =>
 {
     const [requestFriendsDto, setRequestFriendsDto] = useState<GetRequestFriendsDto | null>(null);
     const [MessageApiR, setMessageApiR] = useState<string | null>(null);
+    const [BoolApiR, setBoolApiR] = useState<boolean | null>(null);
 
 
     const GetRequestFriends = useCallback(() => {
-        apiClient.FetchData<GetRequestFriendsDto>("/RequestFriends/GetRequestFriends")
-            .then(response => setRequestFriendsDto(response))
+        apiClient.FetchData<{result: GetRequestFriendsDto}>("/RequestFriends/GetRequestFriends")
+            .then(response => setRequestFriendsDto(response.result))
             .catch(() => setRequestFriendsDto(null))
     }, []);
 
 
     const RequestFriendsAdd = useCallback((Id_User :number) => {
-        apiClient.FetchData<GetRequestFriendsDto>("/RequestFriends/AddRequest/" + Id_User, { method: 'POST' })
+        apiClient.FetchData<{success: boolean, message: string, result: GetRequestFriendsDto}>("/RequestFriends/AddRequest/" + Id_User, { method: 'POST' })
             .then(response => {
-                setRequestFriendsDto(response);
-                setMessageApiR(null);
+                setMessageApiR(response.message);
+                setBoolApiR(response.success);
             })
             .catch(error => {
                 if (error instanceof ApiError) {
                     setMessageApiR(error.message);
+                    setBoolApiR(error.success);
                 }
-                setRequestFriendsDto(null)
+                setRequestFriendsDto(null);
             });
     }, []);
   
 
     const AcceptRequestFriends = useCallback((Id_User: number) => {
-        apiClient.FetchData<GetRequestFriendsDto>("/RequestFriends/AcceptRequestFriends/" + Id_User, { method: 'PATCH' })
+        apiClient.FetchData<{message: string, result: GetRequestFriendsDto}>("/RequestFriends/AcceptRequestFriends/" + Id_User, { method: 'PATCH' })
             .then(response => {
+                setMessageApiR(response.message);
             })
             .catch(() => setRequestFriendsDto(null))
     }, []);
@@ -42,6 +45,7 @@ export const UseRequestFriends = () =>
         RequestFriendsAdd,
         GetRequestFriends,
         requestFriendsDto,
-        MessageApiR
+        MessageApiR,
+        BoolApiR
     }
 } 

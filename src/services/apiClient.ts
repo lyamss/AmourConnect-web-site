@@ -1,12 +1,6 @@
 import { servicesTools } from "@/services/Tools";
 import FetchOptions from "@/entities/FetchOptions";
 
-interface ApiResponse<T> {
-    message: string;
-    success: boolean;
-    result: T;
-}
-
 export class apiClient
 {
     public static async FetchData<T>(
@@ -29,18 +23,19 @@ export class apiClient
             headers,
         });
 
-        if (r.ok) {
-            const response: ApiResponse<T> = await r.json();
-            return response.result;
+        if (!r.ok) {
+            const data = await r.json();
+            throw new ApiError(r.status, data, data.message || 'Une erreur s\'est produite', data.result, data.success);
         }
-        const data = await r.json();
-        throw new ApiError(r.status, data, data.message || 'Une erreur s\'est produite');
+
+        const responseData = await r.json();
+        return responseData as T;
     }
 }
         
 export class ApiError extends Error 
 {
-    constructor(public status: number, public data: Record<string, unknown>, public message: string) 
+    constructor(public status: number, public data: Record<string, unknown>, public message: string, public result: object, public success: boolean) 
     {
         super(message);
     }
