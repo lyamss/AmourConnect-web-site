@@ -12,7 +12,8 @@ const WelcomePage = () =>
     const { button_requestfriendsAdd, 
     show, 
     requestFriendsDto, 
-    MessageApiR } = useFetchRequestFriends();
+    MessageApiR,
+    BoolApiR } = useFetchRequestFriends();
 
     return (
     <AuthRedirect
@@ -25,6 +26,7 @@ const WelcomePage = () =>
                     show={show}
                     requestFriendsDto={requestFriendsDto}
                     MessageApiR={MessageApiR}
+                    BoolApiR={BoolApiR}
                     usersDto={usersDto}
                     button_requestfriendsAdd={button_requestfriendsAdd}
                     />

@@ -3,7 +3,7 @@ import 'tailwindcss/tailwind.css';
 
 interface PopUpProps {
     title?: string;
-    description?: string;
+    description?: string | null;
 }
 
 const PopUp = ({ title, description }: PopUpProps) => {

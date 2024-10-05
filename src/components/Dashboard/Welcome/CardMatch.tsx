@@ -17,7 +17,8 @@ const CardMatch = ( props: {
     show: boolean, 
     requestFriendsDto: GetRequestFriendsDto | null,
     MessageApiR: string | null, 
-    usersDto: GetUserDto[] | null, 
+    usersDto: GetUserDto[] | null,
+    BoolApiR: boolean | null,
     button_requestfriendsAdd: (id_user: number) => void; 
     }) => {
 
@@ -28,7 +29,7 @@ const CardMatch = ( props: {
         if (!props.usersDto || props.usersDto.length === 0) {
             return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200 p-4">
-                        <div className="text-sm text-white ">
+                        <div className="text-sm text-black ">
                             <strong>Aucun utilisateur à afficher à cause de vos critères (âge, sex) mettez à jour votre profil</strong>
                         </div>
             </div>
@@ -56,6 +57,7 @@ const CardMatch = ( props: {
                         show={props.show}
                         requestFriendsDto={props.requestFriendsDto}
                         MessageApiR={props.MessageApiR}
+                        BoolApiR={props.BoolApiR}
         />
         </div>
 

@@ -6,15 +6,18 @@ const RequestMPopUpApi = ( props: {
     show: boolean,
     requestFriendsDto: GetRequestFriendsDto | null,
     MessageApiR: string | null, 
+    BoolApiR: boolean | null,
 }, ) =>
 {
+    console.log(props.BoolApiR + "value bool");
+
     return (
         <>
-        {props.show && (props.requestFriendsDto?.message) ? (
-            <PopUp title="Message" description={props.requestFriendsDto?.message} />
-        ) : props.show &&(props.MessageApiR) ? (
+        {props.show && (props.BoolApiR === true) ? (
+            <PopUp title="Message" description={props.MessageApiR} />
+        ) : props.show &&(props.BoolApiR === false) ? (
             <PopUp2 title="Attention" description={props.MessageApiR} />
-        ) : null }
+        ) : null}
         </>
     );
 }

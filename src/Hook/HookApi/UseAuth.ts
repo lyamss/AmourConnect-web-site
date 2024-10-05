@@ -4,12 +4,14 @@ import {GetUserDto } from "@/entities/GetUserDto";
 import { apiClient, ApiError } from "@/services/apiClient";
 import { servicesTools } from "@/services/Tools";
 import {SetUserDto} from '@/entities/SetUserDto';
+import { useRouter } from 'next/navigation';
 
 export const UseAuth = () =>
 {
     const [UserAuthDto, setUserAuthDto] = useState<GetUserDto | null>(null);
     const [UserRegisterDto, setUserRegisterDto] = useState<GetUserDto | null>(null);
     const [MessageApiAuth, setMessageApiAuth] = useState<string | null>(null);
+    const router = useRouter();
 
     let status: AuthStatus;
 
@@ -29,8 +31,10 @@ export const UseAuth = () =>
 
 
     const UserGetConnected = useCallback(() => {
-        apiClient.FetchData<GetUserDto>("/User/GetUserConnected")
-            .then(response => setUserAuthDto(response))
+        apiClient.FetchData<{message: string, result: GetUserDto}>("/User/GetUserConnected")
+            .then(response => {
+                    setUserAuthDto(response.result)
+            })
             .catch(() => setUserAuthDto(null))
     }, []);
 
@@ -38,7 +42,7 @@ export const UseAuth = () =>
     const AuthRegister = useCallback((SetUserDto: SetUserDto) => {
         apiClient.FetchData<GetUserDto>("/Auth/register", { json: SetUserDto })
             .then(response => {
-                window.location.reload();
+                    router.push("/welcome");
             })
             .catch(error => {
                 if (error instanceof ApiError) {
