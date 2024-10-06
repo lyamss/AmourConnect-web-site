@@ -7,10 +7,15 @@ import { useRequest } from "@/Hook/customsHook/RequestMatch/useRequest";
 import { CardMatchSend } from "@/components/Dashboard/Request/CardMatchSend";
 import { CardMatchReceived } from "@/components/Dashboard/Request/CardMatchReceived";
 import { CardMatchTrue } from "@/components/Dashboard/Request/CardMatchTrue";
+import { useFetchRequestFriends } from "@/Hook/customsHook/RequestMatch/useFetchRequestFriends";
 
 const RequestMatch = () => {
 
-    const { sentRequests, friends, receivedRequests, AcceptRequestFriends, UserAuthDto } = useRequest();
+    const { sentRequests, friends, receivedRequests, UserAuthDto} = useRequest();
+
+    const { show, 
+        MessageApiR,
+        BoolApiR, button_AcceptRequestFriend } = useFetchRequestFriends();
 
         return (
             <AuthRedirect
@@ -31,7 +36,10 @@ const RequestMatch = () => {
 
                 <CardMatchReceived
                 receivedRequests={receivedRequests}
-                AcceptRequestFriends={AcceptRequestFriends}
+                AcceptRequestFriends={button_AcceptRequestFriend}
+                MessageApiR={MessageApiR}
+                BoolApiR={BoolApiR}
+                show={show}
                 >
                 </CardMatchReceived>
 

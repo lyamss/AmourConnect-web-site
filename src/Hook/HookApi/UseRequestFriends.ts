@@ -33,9 +33,10 @@ export const UseRequestFriends = () =>
   
 
     const AcceptRequestFriends = useCallback((Id_User: number) => {
-        apiClient.FetchData<{message: string, result: GetRequestFriendsDto}>("/RequestFriends/AcceptRequestFriends/" + Id_User, { method: 'PATCH' })
+        apiClient.FetchData<{success: boolean, message: string, result: GetRequestFriendsDto}>("/RequestFriends/AcceptRequestFriends/" + Id_User, { method: 'PATCH' })
             .then(response => {
                 setMessageApiR(response.message);
+                setBoolApiR(response.success);
             })
             .catch(() => setRequestFriendsDto(null))
     }, []);

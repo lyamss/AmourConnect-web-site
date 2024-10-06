@@ -16,7 +16,7 @@ const ProfileDetailID = () => {
     const { id } = router.query;
     const idNumber = Number(id);
     const userIDDto = UseGetUserID(idNumber);
-    const { button_requestfriendsAdd, show, requestFriendsDto, BoolApiR, MessageApiR } = useFetchRequestFriends();
+    const { button_requestfriendsAdd, show, BoolApiR, MessageApiR } = useFetchRequestFriends();
 
 
     return (
@@ -32,7 +32,6 @@ const ProfileDetailID = () => {
                 />
                 <RequestMPopUpApi
                 show={show}
-                requestFriendsDto={requestFriendsDto}
                 MessageApiR={MessageApiR}
                 BoolApiR={BoolApiR}
                 />

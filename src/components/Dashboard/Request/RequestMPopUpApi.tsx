@@ -1,10 +1,8 @@
 import PopUp from "@/components/PopUp/pop_up1";
 import PopUp2 from "@/components/PopUp/pop_up2";
-import {GetRequestFriendsDto } from "@/entities/GetRequestFriendsDto";
 
 const RequestMPopUpApi = ( props: {
     show: boolean,
-    requestFriendsDto: GetRequestFriendsDto | null,
     MessageApiR: string | null, 
     BoolApiR: boolean | null,
 }, ) =>

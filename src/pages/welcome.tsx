@@ -11,7 +11,6 @@ const WelcomePage = () =>
     const usersDto = useUsersToMatch();
     const { button_requestfriendsAdd, 
     show, 
-    requestFriendsDto, 
     MessageApiR,
     BoolApiR } = useFetchRequestFriends();
 
@@ -24,7 +23,6 @@ const WelcomePage = () =>
                 <Header1/>
                 <CardMatch
                     show={show}
-                    requestFriendsDto={requestFriendsDto}
                     MessageApiR={MessageApiR}
                     BoolApiR={BoolApiR}
                     usersDto={usersDto}

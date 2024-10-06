@@ -9,13 +9,11 @@ import Link from "next/link";
 import { servicesTools } from "@/services/Tools";
 import { GetUserDto } from "@/entities/GetUserDto";
 import RequestMPopUpApi from "@/components/Dashboard/Request/RequestMPopUpApi";
-import {GetRequestFriendsDto } from "@/entities/GetRequestFriendsDto";
 
 
 
 const CardMatch = ( props: { 
     show: boolean, 
-    requestFriendsDto: GetRequestFriendsDto | null,
     MessageApiR: string | null, 
     usersDto: GetUserDto[] | null,
     BoolApiR: boolean | null,
@@ -55,7 +53,6 @@ const CardMatch = ( props: {
         <div className="z-10">
         <RequestMPopUpApi
                         show={props.show}
-                        requestFriendsDto={props.requestFriendsDto}
                         MessageApiR={props.MessageApiR}
                         BoolApiR={props.BoolApiR}
         />
