@@ -7,8 +7,6 @@ const RequestMPopUpApi = ( props: {
     BoolApiR: boolean | null,
 }, ) =>
 {
-    console.log(props.BoolApiR + "value bool");
-
     return (
         <>
         {props.show && (props.BoolApiR === true) ? (

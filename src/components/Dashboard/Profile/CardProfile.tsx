@@ -136,7 +136,7 @@ export const CardProfile = (props: {
                     id="city"
                     value={props.city}
                     onChange={(e) => props.setCity(e.target.value)}
-                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                   >
                                 <option value="">{props.UserAuthDto?.city}</option>
                                 <option value="Marseille">Marseille</option>
@@ -153,7 +153,7 @@ export const CardProfile = (props: {
                     id="sex"
                     value={props.sex}
                     onChange={(e) => props.setSex(e.target.value)}
-                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                   >
                                 <option value="">{props.UserAuthDto?.sex}</option>
                                 <option value="M">Masculin</option>
@@ -167,7 +167,7 @@ export const CardProfile = (props: {
                     id="description"
                     value={description}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 min-h-[100px]"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                   >
                   </textarea>
                 </div>
@@ -188,7 +188,7 @@ export const CardProfile = (props: {
                     id="dob"
                     value={props.date_of_birth} 
                     onChange={(e) => props.setdate_of_birth(e.target.value)}
-                    className="w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                   />
                 </div>
                 <Button_1Loading
@@ -197,6 +197,8 @@ export const CardProfile = (props: {
                                         className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
                 />
           </form>
+
+          <span className='text-red-500'>Wait 30sec for server update your profile  & 1Mo for picture</span>
 
 
             </div>

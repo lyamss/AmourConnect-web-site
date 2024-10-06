@@ -30,7 +30,7 @@ export const CardRegister = (props: {
                         id="pseudo"
                         value={props.pseudo}
                         onChange={(e) => props.setPseudo(e.target.value)}
-                        className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Enter Pseudo"
                         required
                     />
@@ -56,7 +56,7 @@ export const CardRegister = (props: {
                     id="sex"
                     value={props.sex}
                     onChange={(e) => props.setSex(e.target.value)}
-                    className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                     required
                     >
                     <option value="">Choose your sex...</option>
@@ -85,7 +85,7 @@ export const CardRegister = (props: {
                     id="city"
                     value={props.city}
                     onChange={(e) => props.setCity(e.target.value)}
-                    className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                     required
                 >
                     <option value="">Choose your city...</option>
@@ -117,7 +117,7 @@ export const CardRegister = (props: {
                         id="descripton"
                         value={props.Description}
                         onChange={(e) => props.setDescription(e.target.value)}
-                        className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                         placeholder="Enter Description"
                         required
                     />
@@ -143,17 +143,17 @@ export const CardRegister = (props: {
                     id="date_of_birth"
                     value={props.date_of_birth}
                     onChange={(e) => props.setdate_of_birth(e.target.value)}
-                    className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    className="bg-white w-full px-3 py-2 border border-pink-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                     required
                 />
-                <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                {/* <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
                     <Image
                         src="/assets/svg/calendar-days.svg"
                         alt="Calendar icon"
                         width={20}
                         height={20}
                     />
-                </span>
+                </span> */}
             </div>
         </div>
         <Button_1Loading
