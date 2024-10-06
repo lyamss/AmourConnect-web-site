@@ -17,7 +17,7 @@ export const UseUser = () =>
     const UserPatch = useCallback((formData: FormData) => {
         apiClient.FetchData<GetUserDto>("/User/UpdateUser", { formData, method: 'PATCH' })
             .then(response => {
-                window.location.reload();
+                
             })
             .catch(response => {
                 window.location.reload();
