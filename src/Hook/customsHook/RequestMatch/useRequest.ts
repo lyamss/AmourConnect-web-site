@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 export const useRequest = () =>
 {
     
-    const { requestFriendsDto,  AcceptRequestFriends, GetRequestFriends } = UseRequestFriends();
+    const { requestFriendsDto,  AcceptRequestFriends, GetRequestFriends, MessageApiR } = UseRequestFriends();
     const { status, UserAuthDto, UserGetConnected } = UseAuth();
     const [sentRequests, setSentRequests] = useState<GetRequestFriendsDto[]>([]);
     const [receivedRequests, setReceivedRequests] = useState<GetRequestFriendsDto[]>([]);
@@ -52,5 +52,5 @@ export const useRequest = () =>
         }
     }, [requestFriendsDto, UserAuthDto]);
 
-    return { sentRequests, friends, receivedRequests, AcceptRequestFriends, UserAuthDto}
+    return { sentRequests, friends, receivedRequests, AcceptRequestFriends, UserAuthDto, MessageApiR}
 }

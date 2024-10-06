@@ -3,9 +3,13 @@ import { servicesTools } from '@/services/Tools';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GetRequestFriendsDto } from "@/entities/GetRequestFriendsDto";
+import RequestMPopUpApi from './RequestMPopUpApi';
 export const CardMatchReceived = (props: {
     AcceptRequestFriends: (id: number) => void;
     receivedRequests: GetRequestFriendsDto[];
+    MessageApiR: string | null;
+    show: boolean, 
+    BoolApiR: boolean | null,
 }) =>
 {
     return (
@@ -13,6 +17,14 @@ export const CardMatchReceived = (props: {
             <div className="flex items-center justify-between px-4 py-2 font-medium text-gray-900">
                 <h2 className="text-lg font-medium text-gray-900"><strong>Matchs reçus💘</strong></h2>
             </div>
+
+            <div className="z-10">
+        <RequestMPopUpApi
+                        show={props.show}
+                        MessageApiR={props.MessageApiR}
+                        BoolApiR={props.BoolApiR}
+        />
+        </div>
 
         <table className="w-full text-left divide-y divide-gray-200">
             <tbody className="divide-y divide-gray-200">

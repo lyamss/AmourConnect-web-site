@@ -5,10 +5,10 @@ import { apiClient } from "@/services/apiClient";
 
 export const UseMessage = () => 
 {
-    const [messageDto, setMessageDto] = useState<GetMessageDto | null>(null);
+    const [messageDto, setMessageDto] = useState<GetMessageDto[] | null>(null);
 
     const GetTchatID = useCallback((Id_User: number) => {
-        apiClient.FetchData<{result: GetMessageDto}>("/Message/GetUserMessage/" + Id_User)
+        apiClient.FetchData<{result: GetMessageDto[]}>("/Message/GetUserMessage/" + Id_User)
             .then(response => setMessageDto(response.result))
             .catch(() => setMessageDto(null))
     }, []);
