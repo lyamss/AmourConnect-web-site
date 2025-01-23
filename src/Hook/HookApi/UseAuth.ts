@@ -40,7 +40,7 @@ export const UseAuth = () =>
 
 
     const AuthRegister = useCallback((SetUserDto: SetUserDto) => {
-        apiClient.FetchData<GetUserDto>("/Auth/register", { json: SetUserDto })
+        apiClient.FetchData<GetUserDto>("/Authentification/register", { json: SetUserDto })
             .then(response => {
                     router.push("/welcome");
             })
