@@ -2,8 +2,8 @@ export namespace servicesTools
 {
     export class Tools
     {
-        public static readonly API_BACKEND_URL = process.env.NEXT_PUBLIC_API_URL + '/api';
-        public static GOOGLE_LOGIN_URL = Tools.API_BACKEND_URL + '/Auth/login';
+        public static readonly API_BACKEND_URL = process.env.NEXT_PUBLIC_API_URL + '/api/v1';
+        public static GOOGLE_LOGIN_URL = Tools.API_BACKEND_URL + '/Authentification/login';
 
         public static ConvertingADateToAge(date_of_birth: Date): number
         {
